@@ -1,7 +1,31 @@
 import React from "react";
+import {
+  FaGithub,
+  FaGlobe,
+  FaLinkedin,
+} from "react-icons/fa";
+import { SiNetlify, SiVercel } from "react-icons/si";
+
 import "./Projects.css";
 
 const projects = [
+  {
+    title: "ESWARAN Professional Portfolio Website",
+    date: "Apr 2026",
+    icon: "💼",
+    tech: "React.js, Vite, HTML, CSS, JavaScript, Vercel, GoDaddy Custom Domain",
+    details: [
+      "Modern professional portfolio website",
+      "Projects, skills, education, certificates",
+      "Fully responsive mobile & desktop design",
+      "Custom domain + Vercel deployment",
+      "Live on eswarandev.in",
+    ],
+    live: "https://eswarandev.in",
+    vercel: "https://eswaran-professional-portfolio.vercel.app",
+    github: "https://github.com/Eswaran0908/eswaran-professional-portfolio",
+  },
+
   {
     title: "Online Book Store Application",
     date: "Feb 2025",
@@ -14,6 +38,7 @@ const projects = [
       "MySQL database integration",
     ],
   },
+
   {
     title: "Customer CRUD – Spring Boot",
     date: "Jan 2025",
@@ -25,6 +50,7 @@ const projects = [
       "Tested using Postman",
     ],
   },
+
   {
     title: "Evergreen Studio – JDBC",
     date: "Dec 2024",
@@ -35,19 +61,22 @@ const projects = [
       "Real-time DB updates",
     ],
   },
+
   {
-    title: "Thirukkural Search",
+    title: "Thirukkural Search Website",
     date: "Oct 2024 - Jul 2025",
     icon: "📖",
-    tech: "HTML, CSS, Bootstrap, JS",
+    tech: "HTML, CSS, Bootstrap, JavaScript, Netlify",
     details: [
       "Search Thirukkural couplets",
-      "Responsive UI",
-      "Deployed on Netlify",
+      "Responsive UI design",
+      "Hosted with Netlify",
+      "Tamil educational web project",
     ],
-    live: "https://site-tamil-ilakkiya.netlify.app",
+    netlify: "https://site-tamil-ilakkiya.netlify.app",
     github: "https://github.com/Eswaran0908/thiru-kural-search-webpage",
   },
+
   {
     title: "Agriculture Database",
     date: "Oct 2024",
@@ -58,18 +87,20 @@ const projects = [
       "Profit/Loss tracking",
     ],
   },
+
   {
     title: "ESWARAN Resume Portfolio Website",
     date: "Apr 2026",
-    icon: "💼",
-    tech: "React.js, Vite, HTML, CSS, JavaScript, Netlify",
+    icon: "📄",
+    tech: "React.js, Vite, HTML, CSS, JavaScript, Netlify Free Domain",
     details: [
       "Professional responsive portfolio website",
       "Projects, skills, education, certificates",
       "Resume download option",
-      "Deployed on Netlify",
+      "Hosted using Netlify",
+      "Earlier portfolio version",
     ],
-    live: "https://eswaran-resume-website.netlify.app",
+    netlify: "https://eswaran-resume-website.netlify.app",
     github: "https://github.com/Eswaran0908/eswaran-resume-website",
   },
 ];
@@ -100,19 +131,37 @@ const Projects = ({ next, prev }) => {
               <div className="btn-group">
                 {proj.live && (
                   <button
+                    className="btn live-btn"
                     onClick={() => window.open(proj.live, "_blank")}
-                    className="btn"
                   >
-                    Live
+                    <FaGlobe /> Live
+                  </button>
+                )}
+
+                {proj.netlify && (
+                  <button
+                    className="btn netlify-btn"
+                    onClick={() => window.open(proj.netlify, "_blank")}
+                  >
+                    <SiNetlify /> Netlify
+                  </button>
+                )}
+
+                {proj.vercel && (
+                  <button
+                    className="btn vercel-btn"
+                    onClick={() => window.open(proj.vercel, "_blank")}
+                  >
+                    <SiVercel /> Vercel
                   </button>
                 )}
 
                 {proj.github && (
                   <button
+                    className="btn github-btn"
                     onClick={() => window.open(proj.github, "_blank")}
-                    className="btn"
                   >
-                    GitHub
+                    <FaGithub /> GitHub
                   </button>
                 )}
               </div>
@@ -132,7 +181,7 @@ const Projects = ({ next, prev }) => {
             window.open("https://github.com/Eswaran0908", "_blank")
           }
         >
-          GitHub
+          <FaGithub /> GitHub
         </button>
 
         <button
@@ -143,7 +192,7 @@ const Projects = ({ next, prev }) => {
             )
           }
         >
-          LinkedIn
+          <FaLinkedin /> LinkedIn
         </button>
       </div>
     </section>
