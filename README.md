@@ -10,53 +10,68 @@
 </p>
 
 <p align="center">
-  <a href="https://eswaran-resume-website.netlify.app">🔗 Live Demo</a> |
-  <a href="https://github.com/Eswaran0908/eswaran-professional-portfolio">📂 GitHub Repository</a>
+  <a href="https://eswarandev.in" target="_blank">🔗 Live Website</a> |
+  <a href="https://eswaran-professional-portfolio.vercel.app" target="_blank">⚡ Vercel Live Demo</a> |
+  <a href="https://github.com/Eswaran0908/eswaran-professional-portfolio" target="_blank">📂 GitHub Repository</a>
 </p>
 
 ---
 
-## 📌 About Project
+# 📌 About Project
 
-A modern and fully responsive **Personal Portfolio Website** built to showcase my professional profile as a **Java Full Stack Developer**.
+A modern, responsive and professional **Personal Portfolio Website** built to showcase my profile as a **Java Full Stack Developer**.
 
-### 🎯 Includes:
+This project highlights my:
 
-✅ Skills Showcase  
-✅ Projects Portfolio  
-✅ Certificates Gallery  
-✅ Education Section  
-✅ Resume Download  
-✅ Contact Form  
-✅ Mobile Responsive Design
+✅ Skills  
+✅ Projects  
+✅ Certifications  
+✅ Education  
+✅ Resume  
+✅ Contact Details
 
 ---
 
-## 🚀 Tech Stack
+# 🚀 Live Links
+
+| Platform | Link |
+|--------|------|
+| 🌍 Custom Domain | https://eswarandev.in |
+| ⚡ Vercel | https://eswaran-professional-portfolio.vercel.app |
+| 💻 GitHub Repo | https://github.com/Eswaran0908/eswaran-professional-portfolio |
+
+---
+
+# 🛠️ Tech Stack
 
 | Technology | Usage |
-|-----------|-------|
-| ⚛️ React.js | Frontend |
-| ⚡ Vite | Build Tool |
+|-----------|------|
+| ⚛️ React.js | Frontend UI |
+| ⚡ Vite | Fast Build Tool |
 | 🎨 CSS3 | Styling |
-| 💻 JavaScript | Functionality |
+| 💻 JavaScript | Logic |
 | 📧 EmailJS | Contact Form |
-| 🌐 Netlify | Deployment |
+| ▲ Vercel | Deployment |
+| 🌐 GoDaddy | Custom Domain |
 
 ---
 
-## ✨ Features
+# ✨ Features
 
-✅ Beautiful UI Design  
-✅ Fully Responsive Layout  
-✅ Animated Navbar  
-✅ Resume Download Button  
+✅ Fully Responsive Design  
+✅ Modern UI Layout  
+✅ Smooth Navigation  
+✅ Hero Section  
+✅ About Me Section  
+✅ Skills Showcase  
+✅ Projects Gallery  
+✅ Certificates Section  
+✅ Education Section  
+✅ Resume Download  
 ✅ Contact Form with EmailJS  
-✅ Popup Image Viewer  
-✅ Zoom In / Zoom Out  
-✅ Projects Live Links  
-✅ GitHub & LinkedIn Links  
-✅ Mobile Hamburger Menu
+✅ GitHub / LinkedIn Links  
+✅ Mobile Menu  
+✅ Fast Performance
 
 ---
 
@@ -68,44 +83,31 @@ A modern and fully responsive **Personal Portfolio Website** built to showcase m
 
 ---
 
-## 👨‍💻 About Page
+## 👨‍💻 About Section
 
 ![About](./src/Work-Result/2-about.png)
 
 ---
 
-## 🚀 Projects Page
+## 🚀 Projects Section
 
 ![Projects](./src/Work-Result/3-projects.png)
 
 ---
 
-## 🏆 Certificates Page
+## 🏆 Certificates Section
 
 ![Certificates](./src/Work-Result/4-certificates.png)
 
 ---
 
-## 🔍 Certificate Popup Viewer
-
-![Viewer](./src/Work-Result/4.1-view.png)
-
----
-
-## 🎓 Education Page
+## 🎓 Education Section
 
 ![Education](./src/Work-Result/5-eduation.png)
 
 ---
 
-## 🔍 Certificate Popup Viewer
-
-![Viewer](./src/Work-Result/5.1-view.png)
-
----
-
-
-## 📬 Contact Page
+## 📬 Contact Section
 
 ![Contact](./src/Work-Result/6-contact.png)
 
@@ -117,7 +119,7 @@ A modern and fully responsive **Personal Portfolio Website** built to showcase m
 
 ---
 
-# 📂 Full Folder Structure
+# 📂 Project Folder Structure
 
 ```bash
 ESWARAN-PROFESSIONAL-PORTFOLIO/
@@ -125,82 +127,58 @@ ESWARAN-PROFESSIONAL-PORTFOLIO/
 │   ├── bg-image.webp
 │   ├── ESWARAN.R.pdf
 │   ├── favicon.svg
-│   ├── icons.svg
 │   └── master.png
 │
 │── src/
 │   ├── assets/
-│   │   ├── Education_Certificates/
-│   │   ├── icons/
-│   │   │   ├── technologies/
-│   │   │   └── tools/
-│   │   ├── Learning_proofs/
-│   │   ├── List_Certificates/
-│   │   ├── List_Projects/
-│   │   ├── eswaran.jpg
-│   │   ├── hero.png
-│   │   └── master.png
-│   │
 │   ├── components/
-│   │   ├── Navbar.jsx
-│   │   ├── Home.jsx
-│   │   ├── About.jsx
-│   │   ├── Projects.jsx
-│   │   ├── Certificates.jsx
-│   │   ├── Education.jsx
-│   │   ├── Contact.jsx
-│   │   ├── Footer.jsx
-│   │   ├── Navbar.css
-│   │   ├── Home.css
-│   │   ├── About.css
-│   │   ├── Projects.css
-│   │   ├── Certificates.css
-│   │   ├── Education.css
-│   │   ├── Contact.css
-│   │   └── Footer.css
-│   │
 │   ├── Work-Result/
-│   │   ├── 1-home.png
-│   │   ├── 2-about.png
-│   │   ├── 3-projects.png
-│   │   ├── 4-certificates.png
-│   │   ├── 4.1-view.png
-│   │   ├── 5-education.png
-│   │   └── 5.1-view.png
-│   │   ├── 6-contact.png
-│   │   └── small_device_view.png
-│   │
 │   ├── App.jsx
 │   ├── App.css
 │   ├── index.css
 │   └── main.jsx
 │
 │── package.json
-│── package-lock.json
 │── vite.config.js
 │── README.md
+---
 
+# 🚀 Deployment
 
-Deployment
+🌐 Live Website: https://eswarandev.in
 
-🚀 Hosted on Netlify
+⚡ Hosted on Vercel
 
-👨‍💻 Author
+🔗 Vercel URL: https://eswaran-professional-portfolio.vercel.app
 
-Eswaran R
+🛒 Custom Domain Managed via GoDaddy
+
+---
+
+# 👨‍💻 Author
+
+## Eswaran R
+
 💼 Java Full Stack Developer
 
 📧 Email: eswaranraja555@gmail.com
 
 📱 Phone: +91 6361232640
-🌐 GitHub: https://github.com/Eswaran0908
+
+🌐 Portfolio: https://eswarandev.in
+
+💻 GitHub: https://github.com/Eswaran0908
 
 💼 LinkedIn: https://linkedin.com/in/eswaran0908
 
-⭐ Support
+---
+
+# ⭐ Support
 
 If you like this project, give it a ⭐ on GitHub.
 
-🙏 Thank You
+---
+
+# 🙏 Thank You
 
 Thanks for visiting my portfolio project 💙
