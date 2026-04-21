@@ -1,0 +1,289 @@
+/* ==================================
+   NAVBAR.CSS - FINAL ADVANCED STYLE
+   JSX CHANGE THEVAI ILLAI
+================================== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* BODY */
+html,
+body,
+#root{
+  margin:0;
+  padding:0;
+  scroll-behavior:smooth;
+}
+
+/* APP GAP FIX */
+div[style]{
+  margin-top:-20px;
+}
+
+/* ==================================
+   NAVBAR
+================================== */
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:70px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:0 22px;
+
+  background:rgba(15,23,42,0.94);
+  backdrop-filter:blur(14px);
+
+  border-bottom:2px solid #38bdf8;
+  box-shadow:0 8px 25px rgba(0,0,0,0.28);
+
+  z-index:9999;
+  transition:0.35s ease;
+}
+
+/* SCROLL EFFECT */
+.navbar.scrolled{
+  height:56px;
+  background:rgba(2,6,23,0.97);
+  box-shadow:0 10px 30px rgba(0,0,0,0.45);
+}
+
+/* ==================================
+   LOGO
+================================== */
+.logo{
+  font-size:28px;
+  font-weight:900;
+  letter-spacing:0.5px;
+  cursor:pointer;
+
+  background:linear-gradient(90deg,#38bdf8,#22c55e);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  transition:0.3s ease;
+}
+
+.logo:hover{
+  transform:scale(1.03);
+}
+
+/* ==================================
+   DESKTOP MENU
+================================== */
+.nav-list{
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  height:100%;
+}
+
+.nav-list li{
+  height:100%;
+  display:flex;
+  align-items:center;
+}
+
+/* BUTTON */
+.nav-btn{
+  height:100%;
+  padding:0 18px;
+
+  border:none;
+  outline:none;
+  background:transparent;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#cbd5e1;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:0.4px;
+  cursor:pointer;
+
+  position:relative;
+  transition:0.3s ease;
+}
+
+/* HOVER */
+.nav-btn:hover{
+  color:#ffffff;
+}
+
+/* UNDERLINE EFFECT */
+.nav-btn::after{
+  content:"";
+  position:absolute;
+  left:18%;
+  bottom:10px;
+  width:0%;
+  height:2px;
+  background:#38bdf8;
+  border-radius:20px;
+  transition:0.3s ease;
+}
+
+.nav-btn:hover::after{
+  width:64%;
+}
+
+/* ACTIVE */
+.nav-btn.active{
+  background:linear-gradient(135deg,#38bdf8,#22c55e);
+  color:#020617;
+  font-weight:800;
+  box-shadow:0 8px 20px rgba(56,189,248,0.30);
+}
+
+.nav-btn.active::after{
+  display:none;
+}
+
+/* ==================================
+   HAMBURGER
+================================== */
+.hamburger{
+  display:none;
+  width:42px;
+  height:42px;
+
+  border-radius:12px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+
+  color:#38bdf8;
+  font-size:24px;
+  font-weight:700;
+
+  justify-content:center;
+  align-items:center;
+
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+.hamburger:hover{
+  background:rgba(56,189,248,0.12);
+  transform:scale(1.05);
+}
+/* ==================================
+   MOBILE
+================================== */
+@media (max-width:900px){
+
+  .navbar{
+    padding:0 16px;
+    height:70px;
+  }
+
+  .logo{
+    font-size:24px;
+  }
+
+  .hamburger{
+    display:flex;
+  }
+
+  /* SIDE MENU */
+  .nav-list{
+    position:fixed;
+    top:70px;
+    right:-100%;
+
+    width:250px;
+    height:calc(100vh - 70px);
+
+    overflow-y:auto;
+    overflow-x:hidden;
+    scrollbar-width:thin;
+
+    background:rgba(17,24,39,0.98);
+    backdrop-filter:blur(14px);
+
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:flex-start;
+
+    padding:22px 15px;
+    gap:10px;
+
+    border-left:1px solid rgba(255,255,255,0.06);
+    box-shadow:-10px 0 30px rgba(0,0,0,0.35);
+
+    transition:0.35s ease;
+    z-index:9999;
+  }
+
+  .nav-list.open{
+    right:0;
+  }
+
+  .nav-list li{
+    width:100%;
+    height:auto;
+  }
+
+  .nav-btn{
+    width:100%;
+    height:auto;
+
+    padding:14px 16px;
+    border-radius:12px;
+
+    justify-content:flex-start;
+    font-size:15px;
+  }
+
+  .nav-btn::after{
+    display:none;
+  }
+
+  .nav-btn:hover{
+    background:rgba(255,255,255,0.05);
+    padding-left:22px;
+  }
+
+  .nav-btn.active{
+    width:100%;
+  }
+
+  /* SCROLLBAR */
+  .nav-list::-webkit-scrollbar{
+    width:5px;
+  }
+
+  .nav-list::-webkit-scrollbar-thumb{
+    background:#38bdf8;
+    border-radius:20px;
+  }
+}
+
+/* ==================================
+   SMALL MOBILE
+================================== */
+@media (max-width:500px){
+
+  .logo{
+    font-size:21px;
+  }
+
+  .nav-list{
+    width:220px;
+  }
+
+  .nav-btn{
+    font-size:14px;
+    padding:13px 14px;
+  }
+}

@@ -1,0 +1,236 @@
+/* ===============================
+   PROJECT SECTION
+================================= */
+.project-section {
+  padding: 20px;
+  background: linear-gradient(135deg, #020617, #0f172a, #111827);
+  color: white;
+  min-height: 100vh;
+}
+
+/* ===============================
+   CONTAINER
+================================= */
+.container {
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* ===============================
+   HEADING
+================================= */
+.heading {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 45px;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+/* ===============================
+   GRID - 3 CARD PER ROW
+================================= */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* ===============================
+   CARD
+================================= */
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+  border-radius: 22px;
+  padding: 30px;
+  transition: 0.4s ease;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow Top Border */
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+}
+
+/* Hover */
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(56,189,248,0.18);
+}
+
+/* ===============================
+   TOP AREA
+================================= */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.icon {
+  font-size: 2rem;
+  background: rgba(255,255,255,0.06);
+  padding: 10px;
+  border-radius: 14px;
+}
+
+.date {
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* ===============================
+   TEXT
+================================= */
+.project-card h3 {
+  font-size: 1.45rem;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  color: #f8fafc;
+}
+
+.tech {
+  color: #38bdf8;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+/* ===============================
+   LIST
+================================= */
+.project-card ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.project-card li {
+  margin-bottom: 8px;
+  color: #dbeafe;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+/* ===============================
+   BUTTON GROUP
+================================= */
+.btn-group {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 18px rgba(34,197,94,0.28);
+}
+
+/* ===============================
+   NAVIGATION
+================================= */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 50px auto 25px;
+  gap: 15px;
+}
+
+.nav button {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.nav button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(56,189,248,0.25);
+}
+
+/* ===============================
+   SOCIAL
+================================= */
+.social {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.social button {
+  margin: 8px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  transition: 0.3s;
+}
+
+.social button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 18px rgba(99,102,241,0.25);
+}
+
+/* ===============================
+   TABLET
+================================= */
+@media (max-width: 1100px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===============================
+   MOBILE
+================================= */
+@media (max-width: 700px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .heading {
+    font-size: 2.2rem;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+
+  .nav button,
+  .social button {
+    width: 100%;
+  }
+}

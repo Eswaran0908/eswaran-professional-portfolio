@@ -1,0 +1,299 @@
+/* ===============================
+   CONTACT SECTION - FINAL CLEAN
+================================= */
+
+.contact-section {
+  min-height: auto;
+  padding: 20px;
+  background: radial-gradient(circle at top, #020617, #020617 40%, #0f172a);
+  color: white;
+}
+
+/* TITLE */
+.title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* MAIN GRID */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: start;
+}
+
+/* BOX */
+.contact-left,
+.contact-right {
+  min-height: auto;
+  border-radius: 22px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  transition: 0.4s ease;
+}
+
+.contact-left:hover,
+.contact-right:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 50px rgba(56, 189, 248, 0.18);
+}
+
+.contact-left {
+  border-left: 4px solid #22c55e;
+}
+
+.contact-right {
+  border-left: 4px solid #38bdf8;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* TEXT */
+.contact-left h3 {
+  font-size: 2rem;
+  margin-bottom: 7px;
+}
+
+.sub-text {
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+/* ===================================
+   TOP ICON ROW
+=================================== */
+.top-icons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+/* COMMON CARD */
+.top-icons a,
+.top-icons .location,
+.side-icons a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  text-decoration: none;
+  color: white;
+  padding: 12px 10px;
+  min-height: auto;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.top-icons a:hover,
+.top-icons .location:hover,
+.side-icons a:hover {
+  transform: translateY(-5px);
+  background: rgba(56, 189, 248, 0.18);
+}
+
+/* ===================================
+   BOTTOM AREA
+=================================== */
+.bottom-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+}
+
+.side-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ===================================
+   MAP
+=================================== */
+.map-box {
+  width: 100%;
+  height: 163px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid #38bdf8;
+}
+
+.map-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ===================================
+   ICON SIZE
+=================================== */
+.top-icons svg,
+.side-icons svg {
+  font-size: 22px;
+  margin: 0;
+}
+
+.top-icons span,
+.side-icons span {
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+
+
+/* BRAND COLORS */
+.call svg { color: #22c55e; }
+.github svg { color: #ffffff; }
+.resume svg { color: #38bdf8; }
+.location svg { color: #ef4444; }
+.email svg { color: #f97316; }
+.whatsapp svg { color: #25d366; }
+.linkedin svg { color: #0a66c2; }
+
+/* ===================================
+   FORM
+=================================== */
+.contact-right input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.92);
+}
+/* TEXTAREA HEIGHT REDUCE */
+
+.contact-right textarea{
+  width:100%;
+  padding:14px;
+  border:none;
+  outline:none;
+  border-radius:12px;
+  font-size:14px;
+  box-sizing:border-box;
+
+  height:113px;      /* before bigger */
+  resize:none;       /* manual resize off */
+}
+
+.contact-right input:focus,
+.contact-right textarea:focus {
+  box-shadow: 0 0 0 2px #38bdf8;
+}
+
+.phone-group {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 10px;
+}
+
+/* BUTTON */
+.contact-right button {
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: white;
+  transition: 0.3s;
+}
+
+.contact-right button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.35);
+}
+
+/* ===================================
+   POPUP
+=================================== */
+.success-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-box {
+  background: white;
+  color: #111827;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.popup-box button {
+  margin-top: 14px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #38bdf8;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===================================
+   TABLET
+=================================== */
+@media (max-width: 992px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .side-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .map-box {
+    height: 240px;
+  }
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+@media (max-width: 600px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .top-icons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .side-icons {
+    grid-template-columns: 1fr;
+  }
+
+  .phone-group {
+    grid-template-columns: 1fr;
+  }
+
+  .map-box {
+    height: 200px;
+  }
+
+  .contact-left h3 {
+    font-size: 1.6rem;
+  }
+}
