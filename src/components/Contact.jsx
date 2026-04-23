@@ -11,17 +11,22 @@ import {
   FaPaperPlane,
   FaArrowLeft,
   FaSpinner,
-  FaCheckCircle
+  FaCheckCircle,
+  FaUserTie,
+  FaRocket
 } from "react-icons/fa";
 
 import "./Contact.css";
 
 const Contact = ({ prev }) => {
   const [form, setForm] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     countryCode: "+91",
     phone: "",
+    location: "",
+    purpose: "",
     message: ""
   });
 
@@ -37,103 +42,94 @@ const Contact = ({ prev }) => {
   };
 
   const validateForm = () => {
-    const phoneOnly = form.phone.replace(/\D/g, "");
-
-    if (form.name.trim().length < 3) {
-      alert("Enter valid name");
-      return false;
-    }
-
-    if (!form.email.includes("@")) {
-      alert("Enter valid email");
-      return false;
-    }
-
-    if (phoneOnly.length < 10) {
-      alert("Enter valid phone number");
-      return false;
-    }
-
-    if (form.message.trim().length < 3) {
-      alert("Enter message");
-      return false;
-    }
-
+    if (form.firstName.trim().length < 2) return false;
+    if (!form.email.includes("@")) return false;
+    if (form.phone.trim().length < 5) return false;
+    if (!form.location.trim()) return false;
+    if (!form.purpose.trim()) return false;
+    if (form.message.trim().length < 3) return false;
     return true;
   };
 
   const handleSubmit = (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (!validateForm()) return;
+    if (!validateForm()) {
+      alert("Please fill all required fields");
+      return;
+    }
 
-  setLoading(true);
+    setLoading(true);
 
-  // OWNER MAIL
-  const ownerParams = {
-    title: "New Portfolio Contact",
-    from_name: form.name,
-    user_email: form.email,
-    phone_number: `${form.countryCode} ${form.phone}`,
-    message: form.message
-  };
+    const fullName = `${form.firstName} ${form.lastName}`.trim();
 
-  // USER AUTO REPLY
-  const replyParams = {
-    u_name: form.name,
-    name: form.name,
-    u_email: form.email,
-    email: form.email
-  };
+    /* ADMIN MAIL TEMPLATE */
+    const adminParams = {
+      from_name: fullName,
+      user_email: form.email,
+      phone_number: `${form.countryCode} ${form.phone}`,
+      user_location: form.location,
+      purpose: form.purpose,
+      message: form.message
+    };
 
-  // 1st Send Owner Mail
-  emailjs
-    .send(
-      "service_eswaranraja0908",
-      "template_12fa3jk",
-      ownerParams,
-      "ZPmFFa_bh1BJ4dS45"
-    )
+    /* AUTO REPLY TEMPLATE */
+    const replyParams = {
+      u_name: form.firstName,
+      user_email: form.email
+    };
 
-    .then(() => {
-      // 2nd Send User Thank You Mail
-      return emailjs.send(
+    /* 1. SEND TO YOU */
+    emailjs
+      .send(
         "service_eswaranraja0908",
-        "template_59ow7s7",
-        replyParams,
+        "template_12fa3jk", // New Contact Message Template
+        adminParams,
         "ZPmFFa_bh1BJ4dS45"
-      );
-    })
+      )
 
-    .then(() => {
-      setSubmittedName(form.name);
-      setShowPopup(true);
+      /* 2. AUTO REPLY TO USER */
+      .then(() => {
+        return emailjs.send(
+          "service_eswaranraja0908",
+          "template_autoreply", // Thank You Template
+          replyParams,
+          "ZPmFFa_bh1BJ4dS45"
+        );
+      })
 
-      setForm({
-        name: "",
-        email: "",
-        countryCode: "+91",
-        phone: "",
-        message: ""
+      .then(() => {
+        setSubmittedName(form.firstName);
+        setShowPopup(true);
+
+        setForm({
+          firstName: "",
+          lastName: "",
+          email: "",
+          countryCode: "+91",
+          phone: "",
+          location: "",
+          purpose: "",
+          message: ""
+        });
+
+        setTimeout(() => {
+          setShowPopup(false);
+        }, 3000);
+      })
+
+      .catch(() => {
+        alert("Failed to send message");
+      })
+
+      .finally(() => {
+        setLoading(false);
       });
-
-      setTimeout(() => {
-        setShowPopup(false);
-      }, 3500);
-    })
-
-    .catch((error) => {
-      console.log(error);
-      alert("Message Failed. Try again.");
-    })
-
-    .finally(() => {
-      setLoading(false);
-    });
-};
+  };
 
   return (
     <section className="contact-section">
+      <div className="contact-glow"></div>
 
       <h2 className="title">📬 Contact Me</h2>
 
@@ -142,11 +138,30 @@ const Contact = ({ prev }) => {
         {/* LEFT SIDE */}
         <div className="contact-left">
 
-          <h3>Get in Touch</h3>
+          <div className="mini-badge">
+            <FaRocket /> Available for Opportunities
+          </div>
+
+          <h3>Let's Build Something Great</h3>
 
           <p className="sub-text">
-            Feel free to reach out anytime.
+            Open for Full Stack Developer roles, freelance work,
+            collaborations and exciting tech opportunities.
           </p>
+
+          <div className="stats-row">
+
+            <div className="stat-box">
+              <FaUserTie />
+              <span>Open To Work</span>
+            </div>
+
+            <div className="stat-box">
+              <FaRocket />
+              <span>Fast Response</span>
+            </div>
+
+          </div>
 
           <div className="top-icons">
 
@@ -165,11 +180,7 @@ const Contact = ({ prev }) => {
               <span>GitHub</span>
             </a>
 
-            <a
-              href="/ESWARAN.R.pdf"
-              download
-              className="resume"
-            >
+            <a href="/ESWARAN.R.pdf" download className="resume">
               <FaFileDownload />
               <span>Resume</span>
             </a>
@@ -190,10 +201,7 @@ const Contact = ({ prev }) => {
 
             <div className="side-icons">
 
-              <a
-                href="mailto:eswaranraja555@gmail.com"
-                className="email"
-              >
+              <a href="mailto:eswaranraja555@gmail.com" className="email">
                 <FaEnvelope />
                 <span>Email</span>
               </a>
@@ -209,7 +217,7 @@ const Contact = ({ prev }) => {
               </a>
 
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/eswaran0908"
                 target="_blank"
                 rel="noreferrer"
                 className="linkedin"
@@ -221,132 +229,166 @@ const Contact = ({ prev }) => {
             </div>
 
             <div className="map-box">
-
               <iframe
                 title="map"
                 loading="lazy"
                 src="https://maps.google.com/maps?q=Singarapettai%20Tamil%20Nadu&t=&z=13&ie=UTF8&iwloc=&output=embed"
               />
-
             </div>
 
           </div>
 
         </div>
 
-        {/* RIGHT SIDE */}
-        <form
-          className="contact-right"
-          onSubmit={handleSubmit}
-        >
+        {/* RIGHT SIDE FORM */}
+        <form className="contact-right" onSubmit={handleSubmit}>
 
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter Name"
-            value={form.name}
-            onChange={handleChange}
-            required
-          />
+          <h3 className="form-title">Send Me a Message</h3>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter Email"
-            value={form.email}
-            onChange={handleChange}
-            required
-          />
-
-          <div className="phone-group">
+          {/* FIRST + LAST NAME */}
+          <div className="double-row">
 
             <input
               type="text"
-              name="countryCode"
-              value={form.countryCode}
+              name="firstName"
+              placeholder="First Name *"
+              value={form.firstName}
               onChange={handleChange}
               required
             />
 
             <input
-              type="tel"
-              name="phone"
-              placeholder="Phone"
-              value={form.phone}
+              type="text"
+              name="lastName"
+              placeholder="Last Name"
+              value={form.lastName}
               onChange={handleChange}
-              maxLength="10"
-              pattern="[0-9]{10}"
-              required
             />
 
           </div>
 
+          {/* EMAIL + PHONE */}
+          <div className="double-row">
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address *"
+              value={form.email}
+              onChange={handleChange}
+              required
+            />
+
+            <div className="phone-group">
+
+              <input
+                type="text"
+                name="countryCode"
+                className="code-input"
+                value={form.countryCode}
+                onChange={handleChange}
+                maxLength="5"
+                required
+              />
+
+              <input
+                type="tel"
+                name="phone"
+                className="number-input"
+                placeholder="Phone Number *"
+                value={form.phone}
+                onChange={handleChange}
+                maxLength="15"
+                required
+              />
+
+            </div>
+
+          </div>
+
+          {/* LOCATION + PURPOSE */}
+          <div className="double-row">
+
+            <input
+              type="text"
+              name="location"
+              placeholder="Location *"
+              value={form.location}
+              onChange={handleChange}
+              required
+            />
+
+            <select
+              name="purpose"
+              value={form.purpose}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select Purpose *</option>
+              <option value="Hiring Opportunity">Hiring Opportunity</option>
+              <option value="Job Request">Job Request</option>
+              <option value="Freelance Project">Freelance Project</option>
+              <option value="Business Inquiry">Business Inquiry</option>
+              <option value="Collaboration">Collaboration</option>
+              <option value="Other">Other</option>
+            </select>
+
+          </div>
+
+          {/* MESSAGE */}
           <textarea
             rows="6"
             name="message"
-            placeholder="Message..."
+            placeholder="Write your message..."
             value={form.message}
             onChange={handleChange}
             required
           />
 
-          <button
-            type="submit"
-            disabled={loading}
-          >
-            {loading ? (
-              <>
-                <FaSpinner className="spin-loader" />
-                Sending...
-              </>
-            ) : (
-              <>
-                <FaPaperPlane />
-                Send Message
-              </>
-            )}
-          </button>
+          {/* BUTTONS */}
+          <div className="form-actions">
+
+            <button
+              type="button"
+              className="prev-btn"
+              onClick={prev}
+            >
+              <FaArrowLeft /> Prev
+            </button>
+
+            <button
+              type="submit"
+              className="send-btn"
+              disabled={loading}
+            >
+              {loading ? (
+                <>
+                  <FaSpinner className="spin-loader" />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <FaPaperPlane />
+                  Send Message
+                </>
+              )}
+            </button>
+
+          </div>
 
         </form>
-
-      </div>
-
-      {/* PREV BUTTON */}
-      <div className="nav-buttons">
-
-        <button
-          className="btn prev"
-          onClick={prev}
-        >
-          <FaArrowLeft />
-          Prev
-        </button>
 
       </div>
 
       {/* SUCCESS POPUP */}
       {showPopup && (
         <div className="success-popup">
-
           <div className="popup-box">
-
-            <FaCheckCircle
-              size={55}
-              color="#22c55e"
-            />
-
+            <FaCheckCircle size={55} color="#22c55e" />
             <h2>Message Sent!</h2>
-
-            <p>
-              Thank you <b>{submittedName}</b>
-            </p>
-
-            <p>
-              I will contact you soon 🚀
-            </p>
-
+            <p>Thank you {submittedName}</p>
+            <p>I will contact you soon 🚀</p>
           </div>
-
         </div>
       )}
 
