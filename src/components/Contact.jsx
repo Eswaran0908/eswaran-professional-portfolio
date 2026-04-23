@@ -13,7 +13,8 @@ import {
   FaSpinner,
   FaCheckCircle,
   FaUserTie,
-  FaRocket
+  FaRocket,
+  FaTimesCircle
 } from "react-icons/fa";
 
 import "./Contact.css";
@@ -32,6 +33,7 @@ const Contact = ({ prev }) => {
 
   const [loading, setLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [showError, setShowError] = useState(false);
   const [submittedName, setSubmittedName] = useState("");
 
   const handleChange = (e) => {
@@ -55,16 +57,23 @@ const Contact = ({ prev }) => {
     e.preventDefault();
 
     if (!validateForm()) {
-      alert("Please fill all required fields");
+      setShowError(true);
+
+      setTimeout(() => {
+        setShowError(false);
+      }, 3000);
+
       return;
     }
 
     setLoading(true);
 
-    const fullName = `${form.firstName} ${form.lastName}`.trim();
+    const fullName =
+      `${form.firstName} ${form.lastName}`.trim();
 
-    /* ADMIN MAIL TEMPLATE */
+    /* ADMIN MAIL */
     const adminParams = {
+      title: "New Portfolio Contact",
       from_name: fullName,
       user_email: form.email,
       phone_number: `${form.countryCode} ${form.phone}`,
@@ -73,26 +82,24 @@ const Contact = ({ prev }) => {
       message: form.message
     };
 
-    /* AUTO REPLY TEMPLATE */
+    /* AUTO REPLY */
     const replyParams = {
       u_name: form.firstName,
-      user_email: form.email
+      u_email: form.email
     };
 
-    /* 1. SEND TO YOU */
     emailjs
       .send(
         "service_eswaranraja0908",
-        "template_12fa3jk", // New Contact Message Template
+        "template_12fa3jk",
         adminParams,
         "ZPmFFa_bh1BJ4dS45"
       )
 
-      /* 2. AUTO REPLY TO USER */
       .then(() => {
         return emailjs.send(
           "service_eswaranraja0908",
-          "template_autoreply", // Thank You Template
+          "template_slyr5xs",
           replyParams,
           "ZPmFFa_bh1BJ4dS45"
         );
@@ -118,8 +125,14 @@ const Contact = ({ prev }) => {
         }, 3000);
       })
 
-      .catch(() => {
-        alert("Failed to send message");
+      .catch((error) => {
+        console.log("EmailJS Error:", error);
+
+        setShowError(true);
+
+        setTimeout(() => {
+          setShowError(false);
+        }, 3000);
       })
 
       .finally(() => {
@@ -145,8 +158,9 @@ const Contact = ({ prev }) => {
           <h3>Let's Build Something Great</h3>
 
           <p className="sub-text">
-            Open for Full Stack Developer roles, freelance work,
-            collaborations and exciting tech opportunities.
+            Open for Full Stack Developer roles,
+            freelance work, collaborations and
+            exciting tech opportunities.
           </p>
 
           <div className="stats-row">
@@ -180,7 +194,11 @@ const Contact = ({ prev }) => {
               <span>GitHub</span>
             </a>
 
-            <a href="/ESWARAN.R.pdf" download className="resume">
+            <a
+              href="/ESWARAN.R.pdf"
+              download
+              className="resume"
+            >
               <FaFileDownload />
               <span>Resume</span>
             </a>
@@ -201,7 +219,10 @@ const Contact = ({ prev }) => {
 
             <div className="side-icons">
 
-              <a href="mailto:eswaranraja555@gmail.com" className="email">
+              <a
+                href="mailto:eswaranraja555@gmail.com"
+                className="email"
+              >
                 <FaEnvelope />
                 <span>Email</span>
               </a>
@@ -240,12 +261,17 @@ const Contact = ({ prev }) => {
 
         </div>
 
-        {/* RIGHT SIDE FORM */}
-        <form className="contact-right" onSubmit={handleSubmit}>
+        {/* RIGHT SIDE */}
+        <form
+          className="contact-right"
+          onSubmit={handleSubmit}
+        >
 
-          <h3 className="form-title">Send Me a Message</h3>
+          <h3 className="form-title">
+            Send Me a Message
+          </h3>
 
-          {/* FIRST + LAST NAME */}
+          {/* NAME */}
           <div className="double-row">
 
             <input
@@ -324,13 +350,34 @@ const Contact = ({ prev }) => {
               onChange={handleChange}
               required
             >
-              <option value="">Select Purpose *</option>
-              <option value="Hiring Opportunity">Hiring Opportunity</option>
-              <option value="Job Request">Job Request</option>
-              <option value="Freelance Project">Freelance Project</option>
-              <option value="Business Inquiry">Business Inquiry</option>
-              <option value="Collaboration">Collaboration</option>
-              <option value="Other">Other</option>
+              <option value="">
+                Select Purpose *
+              </option>
+
+              <option value="Hiring Opportunity">
+                Hiring Opportunity
+              </option>
+
+              <option value="Job Request">
+                Job Request
+              </option>
+
+              <option value="Freelance Project">
+                Freelance Project
+              </option>
+
+              <option value="Business Inquiry">
+                Business Inquiry
+              </option>
+
+              <option value="Collaboration">
+                Collaboration
+              </option>
+
+              <option value="Other">
+                Other
+              </option>
+
             </select>
 
           </div>
@@ -383,11 +430,35 @@ const Contact = ({ prev }) => {
       {/* SUCCESS POPUP */}
       {showPopup && (
         <div className="success-popup">
-          <div className="popup-box">
-            <FaCheckCircle size={55} color="#22c55e" />
+          <div className="popup-box success-box">
+            <FaCheckCircle
+              size={55}
+              color="#22c55e"
+            />
             <h2>Message Sent!</h2>
-            <p>Thank you {submittedName}</p>
-            <p>I will contact you soon 🚀</p>
+            <p>
+              Thank you {submittedName}
+            </p>
+            <p>
+              I will contact you soon 🚀
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* ERROR POPUP */}
+      {showError && (
+        <div className="success-popup">
+          <div className="popup-box error-box">
+            <FaTimesCircle
+              size={55}
+              color="#ef4444"
+            />
+            <h2>Failed!</h2>
+            <p>Message not sent.</p>
+            <p>
+              Please check EmailJS setup.
+            </p>
           </div>
         </div>
       )}
