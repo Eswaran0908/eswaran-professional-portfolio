@@ -103,7 +103,7 @@ This project highlights my:
 
 ## 🎓 Education Section
 
-![Education](./src/Work-Result/5-eduation.png)
+![Education](./src/Work-Result/5-education.png)
 
 ---
 
