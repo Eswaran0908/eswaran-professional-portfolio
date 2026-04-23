@@ -98,12 +98,14 @@ This project highlights my:
 ## 🏆 Certificates Section
 
 ![Certificates](./src/Work-Result/4-certificates.png)
+![Certificates View](./src/Work-Result/4.1-view.png)
 
 ---
 
 ## 🎓 Education Section
 
 ![Education](./src/Work-Result/5-education.png)
+![Education View](./src/Work-Result/5.1-view.png)
 
 ---
 
