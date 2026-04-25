@@ -20,6 +20,21 @@ const Footer = ({ setPage }) => {
 
         {/* COLUMN 1 */}
         <div className="col left-col">
+
+          {/* 🔥 CLICK LOGO */}
+          <a
+            href="/EANlogo.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-logo-link"
+          >
+            <img
+              src="/EANlogo.png"
+              alt="EAN Logo"
+              className="footer-logo-img"
+            />
+          </a>
+
           <h3 className="footer-brand">
             <FaReact className="spin-icon" />
             EAN Portfolio

@@ -16,17 +16,16 @@
   width:100%;
   height:2px;
   background:linear-gradient(90deg,#38bdf8,#22c55e,#38bdf8);
-  margin-bottom:18px;
+  margin-bottom:10px;
 }
 
 /* GRID */
 
 .footer-grid{
-  max-width:1600px;
+  max-width:auto;
   margin:auto;
-
   display:grid;
-  grid-template-columns:1.2fr 1fr 1fr 1.2fr 1fr;
+  grid-template-columns:1.3fr 1fr 1fr 1.2fr 1fr;
   gap:12px;
   align-items:center;
 }
@@ -35,23 +34,67 @@
 
 .col{
   text-align:center;
-
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  gap:4px;
+  gap:6px;
+}
+
+/* ==========================
+   LEFT COLUMN SAME LINE
+========================== */
+
+.left-col{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:flex-start;
+  gap:12px;
+  text-align:left;
+}
+
+/* LOGO */
+
+.footer-logo-link{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-left: 20px;
+  flex-shrink:0;
+}
+
+.footer-logo-img{
+  width:52px;
+  height:52px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid #38bdf8;
+  box-shadow:0 0 15px rgba(56,189,248,.45);
+  transition:.3s;
+}
+
+.footer-logo-img:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 22px rgba(34,197,94,.55);
+}
+
+/* TEXT BLOCK */
+
+.footer-text{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:2px;
 }
 
 /* BRAND */
 
 .footer-brand{
   margin:0;
-
   display:flex;
   align-items:center;
   gap:8px;
-
   font-size:1.25rem;
   font-weight:900;
   color:#38bdf8;
@@ -84,13 +127,11 @@
 
 .footer-tech{
   margin:0;
-
   display:flex;
   align-items:center;
   justify-content:center;
   gap:10px;
   flex-wrap:wrap;
-
   font-size:12px;
   color:#dbeafe;
   font-weight:700;
@@ -101,21 +142,16 @@
 .footer-btn{
   border:none;
   cursor:pointer;
-
   padding:10px 18px;
   border-radius:12px;
-
   background:linear-gradient(135deg,#22c55e,#16a34a);
   color:#fff;
-
   font-size:14px;
   font-weight:800;
-
   display:flex;
   align-items:center;
   justify-content:center;
   gap:8px;
-
   transition:.3s;
 }
 
@@ -147,6 +183,11 @@
   grid-template-columns:repeat(2,1fr);
 }
 
+.left-col{
+  justify-content:center;
+  text-align:center;
+}
+
 }
 
 /* MOBILE */
@@ -165,6 +206,16 @@
 .footer-btn{
   width:100%;
   max-width:240px;
+}
+
+.footer-logo-img{
+  width:46px;
+  height:46px;
+}
+
+.left-col{
+  flex-direction:column;
+  text-align:center;
 }
 
 }

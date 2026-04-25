@@ -14,27 +14,60 @@ const Navbar = ({ active, setPage }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // 🔥 scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
     };
+
     window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
-      <h2 className="logo">Eswaran</h2>
 
-      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+      {/* LEFT SIDE BRAND */}
+      <div className="brand-box">
+
+        <a
+          href="/EANicelogo.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="logo-link"
+        >
+          <img
+            src="/EANicelogo.png"
+            alt="Logo"
+            className="logo-img"
+          />
+        </a>
+
+        <h2
+          className="brand-name"
+          onClick={() => setPage("home")}
+        >
+          Eswaran
+        </h2>
+
+      </div>
+
+      {/* MOBILE MENU ICON */}
+      <div
+        className="hamburger"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
         {menuOpen ? "✖" : "☰"}
       </div>
 
+      {/* MENU */}
       <ul className={`nav-list ${menuOpen ? "open" : ""}`}>
         {sections.map((item) => (
           <li key={item}>
             <button
-              className={`nav-btn ${active === item ? "active" : ""}`}
+              className={`nav-btn ${
+                active === item ? "active" : ""
+              }`}
               onClick={() => {
                 setPage(item);
                 setMenuOpen(false);
@@ -45,6 +78,7 @@ const Navbar = ({ active, setPage }) => {
           </li>
         ))}
       </ul>
+
     </nav>
   );
 };

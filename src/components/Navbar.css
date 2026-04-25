@@ -1,6 +1,5 @@
 /* ==================================
    NAVBAR.CSS - FINAL ADVANCED STYLE
-   JSX CHANGE THEVAI ILLAI
 ================================== */
 
 *{
@@ -37,7 +36,7 @@ div[style]{
   justify-content:space-between;
   align-items:center;
 
-  padding:0 22px;
+  padding:10px 50px;
 
   background:rgba(15,23,42,0.94);
   backdrop-filter:blur(14px);
@@ -57,13 +56,47 @@ div[style]{
 }
 
 /* ==================================
-   LOGO
+   BRAND BOX (LOGO + NAME)
 ================================== */
-.logo{
+.brand-box{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* ==================================
+   LOGO IMAGE
+================================== */
+.logo-link{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+}
+
+.logo-img{
+  width:62px;
+  height:62px;
+  object-fit:cover;
+  border-radius:50%;
+  cursor:pointer;
+  transition:0.3s ease;
+  box-shadow:0 0 14px rgba(56,189,248,0.35);
+}
+
+.logo-img:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 22px #38bdf8;
+}
+
+/* ==================================
+   BRAND NAME
+================================== */
+.brand-name{
   font-size:28px;
   font-weight:900;
   letter-spacing:0.5px;
   cursor:pointer;
+  margin:0;
 
   background:linear-gradient(90deg,#38bdf8,#22c55e);
   -webkit-background-clip:text;
@@ -72,7 +105,7 @@ div[style]{
   transition:0.3s ease;
 }
 
-.logo:hover{
+.brand-name:hover{
   transform:scale(1.03);
 }
 
@@ -177,6 +210,7 @@ div[style]{
   background:rgba(56,189,248,0.12);
   transform:scale(1.05);
 }
+
 /* ==================================
    MOBILE
 ================================== */
@@ -187,12 +221,17 @@ div[style]{
     height:70px;
   }
 
-  .logo{
+  .hamburger{
+    display:flex;
+  }
+
+  .brand-name{
     font-size:24px;
   }
 
-  .hamburger{
-    display:flex;
+  .logo-img{
+    width:54px;
+    height:54px;
   }
 
   /* SIDE MENU */
@@ -237,10 +276,8 @@ div[style]{
   .nav-btn{
     width:100%;
     height:auto;
-
     padding:14px 16px;
     border-radius:12px;
-
     justify-content:flex-start;
     font-size:15px;
   }
@@ -258,7 +295,6 @@ div[style]{
     width:100%;
   }
 
-  /* SCROLLBAR */
   .nav-list::-webkit-scrollbar{
     width:5px;
   }
@@ -274,8 +310,13 @@ div[style]{
 ================================== */
 @media (max-width:500px){
 
-  .logo{
-    font-size:21px;
+  .brand-name{
+    font-size:19px;
+  }
+
+  .logo-img{
+    width:46px;
+    height:46px;
   }
 
   .nav-list{
