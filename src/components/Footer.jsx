@@ -22,7 +22,7 @@ const Footer = ({ setPage }) => {
         <div className="col left-col">
           <h3 className="footer-brand">
             <FaReact className="spin-icon" />
-            ER Portfolio
+            EAN Portfolio
           </h3>
 
           <p className="footer-sub">
