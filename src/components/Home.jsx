@@ -26,8 +26,10 @@ const Home = ({ next, setPage }) => {
             </div>
 
             <h1 className="main-title">
-               Eswaran <span>R</span> (EAN)
+               Eswaran R
+               <span className="ean-tag">EAN Developer </span>
                <small>Java Full Stack Developer</small>
+
             </h1>
 
             <p className="summary">

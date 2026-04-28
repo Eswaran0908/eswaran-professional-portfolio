@@ -69,16 +69,15 @@ LEFT SIDE
   line-height: 1.1;
 }
 
-
 .main-title {
   margin-top: 18px;
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-end;
-  gap: 10px;
+  align-items: baseline;
+  gap: 12px;
   font-size: clamp(3rem, 6vw, 5.2rem);
-  line-height: 1;
-  font: bolder;
+  line-height: 1.05;
+  font-weight: 800;
   color: #ffffff;
 }
 
@@ -89,10 +88,19 @@ LEFT SIDE
 }
 
 .main-title small {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: #38bdf8;
-  margin-bottom: 12px;
+  color: #0eaef3;
+  margin-left: 4px;
+  line-height: 1.2;
+}
+
+.ean-tag {
+  font-size: 0.60em;
+  font-weight: 700;
+  opacity: 0.95;
+  margin-left: 6px;
+  white-space: nowrap;
 }
 
 .summary {
