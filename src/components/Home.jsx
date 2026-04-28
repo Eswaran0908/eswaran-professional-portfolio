@@ -27,7 +27,7 @@ const Home = ({ next, setPage }) => {
 
             <h1 className="main-title">
               Eswaran <span>R</span>
-              <small>Java Full Stack Developer</small>
+              <small>EAN Developer | Java Full Stack Developer</small>
             </h1>
 
             <p className="summary">
