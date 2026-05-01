@@ -145,12 +145,12 @@ LEFT SIDE
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
 
 .service-grid div {
-  padding: 11px;
+  padding: 10px;
   border-radius: 12px;
 
   background: rgba(255, 255, 255, .03);

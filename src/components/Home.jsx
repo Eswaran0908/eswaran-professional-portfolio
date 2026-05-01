@@ -1,12 +1,15 @@
-
-
-import profile from "../assets/eswaran.jpg";
+import profile from "../assets/eswaran-full-stack-developer.jpg";
 import "./Home.css";
 
 const Home = ({ next, setPage }) => {
   return (
     <section className="home-section">
       <div className="home-card">
+
+        {/* ⭐ SEO HIDDEN KEYWORDS */}
+        <h2 style={{ display: "none" }}>
+          Eswaran R EAN Developer Full Stack Developer Java Spring Boot React Portfolio India
+        </h2>
 
         <div className="top-row">
 
@@ -29,14 +32,13 @@ const Home = ({ next, setPage }) => {
                Eswaran R
                <span className="ean-tag">EAN Developer </span>
                <small>Java Full Stack Developer</small>
-
             </h1>
 
+            {/* ⭐ SEO OPTIMIZED SUMMARY */}
             <p className="summary">
-              Full Stack Developer skilled in Java, Spring Boot,
-              React.js, MongoDB and MySQL. Focused on building
-              scalable web applications with modern UI,
-              secure backend systems and real-world solutions.
+                Professional Full Stack Developer from India specializing in 
+                Java, Spring Boot, React.js, MongoDB and MySQL. 
+                Builds scalable web applications, modern UI interfaces and secure backend systems.
             </p>
 
             {/* SKILLS */}
@@ -48,6 +50,10 @@ const Home = ({ next, setPage }) => {
               <span>MySQL</span>
               <span>AWS</span>
               <span>GitHub</span>
+
+                {/* ⭐ ADD THIS */}
+               <span>SEO Optimization</span>
+
             </div>
 
             {/* SERVICES */}
@@ -67,6 +73,10 @@ const Home = ({ next, setPage }) => {
                 <div>✔ React.js Frontend</div>
                 <div>✔ GitHub Workflow</div>
                 <div>✔ Frontend Deployment</div>
+
+                  {/* ⭐ ADD THIS */}
+                <div>✔ SEO Optimization</div>
+                
               </div>
 
             </div>
@@ -80,16 +90,18 @@ const Home = ({ next, setPage }) => {
             <div className="image-wrap">
               <img
                 src={profile}
-                alt="Eswaran Profile"
+                alt="Eswaran R Full Stack Developer Java Spring Boot React Portfolio"  // ⭐ SEO ALT TEXT
                 className="home-image"
+                loading="lazy"        // ⭐ SEO + Performance
+                width="300"           // ⭐ SEO CLS fix
+                height="300"          // ⭐ SEO CLS fix
+                decoding="async"      // ⭐ Faster rendering
               />
             </div>
 
             {/* STATUS */}
             <div className="status-box">
               <p>🟢 Available for Hiring | 🚀 Immediate Joiner | 📍 Tamil Nadu, India</p>
-              
-
             </div>
 
             {/* GOAL */}
