@@ -18,8 +18,18 @@ const projects = [
     date: "Apr 2026",
     icon: "💼",
 
-    image: "/seo-console.png",
-
+    images: [
+      "/e-port/1-home.png",
+      "/e-port/2-about.png",
+      "/e-port/3-projects.png",
+      "/e-port/4-certificates.png",
+      "/e-port/4.1-view.png",
+      "/e-port/5-education.png",
+      "/e-port/5.1-view.png",
+      "/e-port/6-contact.png",
+      "/e-port/seo-console.png",
+      "/e-port/small_device_view.png"
+    ],
 
     tech:
       "React.js, Vite, HTML, CSS, JavaScript, SEO Optimization, Google Search Console, Vercel, GoDaddy",
