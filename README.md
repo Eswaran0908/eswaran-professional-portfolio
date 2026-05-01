@@ -71,7 +71,37 @@ This project highlights my:
 ✅ Contact Form with EmailJS  
 ✅ GitHub / LinkedIn Links  
 ✅ Mobile Menu  
-✅ Fast Performance
+✅ Fast Performance  
+
+---
+
+# 🔍 SEO Optimization
+
+This portfolio is optimized for **Search Engine Visibility (SEO)** to improve ranking on Google and increase discoverability.
+
+### 🚀 SEO Features Implemented
+
+✅ Meta Tags (Title, Description, Keywords)  
+✅ Open Graph Tags (Social Media Sharing Preview)  
+✅ Proper Heading Structure (H1, H2, H3)  
+✅ Semantic HTML Layout  
+✅ Fast Loading (Vite Optimized Build)  
+✅ Fully Mobile Responsive  
+✅ Optimized Images (Compressed Assets)  
+✅ Clean URL Structure  
+
+### 📊 SEO Tools Used
+
+- Google Search Console  
+- Lighthouse Performance Testing  
+- Vercel Analytics  
+
+### 🎯 Result
+
+✔ Website indexed on Google  
+✔ Improved search ranking  
+✔ Fast loading performance  
+✔ Mobile-friendly experience  
 
 ---
 
