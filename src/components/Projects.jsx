@@ -28,7 +28,8 @@ const projects = [
       "/e-port/5.1-view.png",
       "/e-port/6-contact.png",
       "/e-port/seo-console.png",
-      "/e-port/small_device_view.png"
+      "/e-port/small_device_view.png",
+      "/e-port/google_search.png"
     ],
 
     tech:
