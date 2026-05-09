@@ -66,14 +66,14 @@ const projects = [
 
     // ⭐ MULTIPLE IMAGES
     images: [
-      "/eswaran_resume/about.png",
-      "/eswaran_resume/home.png",
-      "/eswaran_resume/projects.png",
-      "/eswaran_resume/contact.png",
-      "/eswaran_resume/certificates.png",
-      "/eswaran_resume/education.png",
       "/eswaran_resume/index.png",
-      "/eswaran_resume/skills.png"
+      "/eswaran_resume/home.png",
+      "/eswaran_resume/about.png",
+      "/eswaran_resume/skills.png",
+      "/eswaran_resume/projects.png",
+      "/eswaran_resume/education.png",
+       "/eswaran_resume/certificates.png",
+      "/eswaran_resume/contact.png"
     ],
 
     tech: "React.js, Vite, HTML, CSS, JavaScript, Netlify Free Domain",
