@@ -1,7 +1,7 @@
 # 🌐 ESWARAN Professional Portfolio
 
 <p align="center">
-  <img src="./src/assets/eswaran.jpg" width="150" alt="Eswaran Profile"/>
+  <img src="./src/assets/eswaran-full-stack-developer.jpg" width="150" alt="Eswaran Profile"/>
 </p>
 
 <p align="center">
