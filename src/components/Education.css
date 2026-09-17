@@ -1,24 +1,45 @@
 /* ===========================
-MAIN SECTION
+   MAIN SECTION
 =========================== */
+
 .education {
-  min-height: auto;
-  padding: 20px;
-  background: radial-gradient(circle at top, #0f172a, #020617 72%);
+  min-height: 100vh;
+  width: 100%;
+
+  padding: 25px 30px 45px;
+
+  background: radial-gradient(
+    circle at top,
+    #0f172a,
+    #020617 72%
+  );
+
   color: #fff;
+  box-sizing: border-box;
 }
 
+
 /* ===========================
-HEADER
+   HEADER
 =========================== */
+
 .edu-header {
   text-align: center;
+  margin-bottom: 38px;
 }
 
 .edu-header h2 {
+  margin: 0;
+
   font-size: 42px;
   font-weight: 900;
-  background: linear-gradient(90deg, #38bdf8, #22c55e);
+
+  background: linear-gradient(
+    90deg,
+    #38bdf8,
+    #22c55e
+  );
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -26,166 +47,335 @@ HEADER
 .edu-header p {
   color: #94a3b8;
   font-size: 14px;
-  margin-bottom: 39px;
+  margin-top: 8px;
 }
 
+
 /* ===========================
-GRID
+   COMMON GRID
 =========================== */
+
 .edu-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
+  gap: 26px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+
 /* ===========================
-CARD
+   FIRST ROW
+   MASTER + NSDC
 =========================== */
+
+.professional-grid {
+  max-width: 1100px;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  margin-bottom: 30px;
+}
+
+
+/* ===========================
+   SECOND ROW
+   BCA + HSC + SSLC
+=========================== */
+
+.academic-grid {
+  max-width: 1450px;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+
+/* ===========================
+   CARD
+=========================== */
+
 .edu-card {
-  min-height: 345px;
-  padding: 25px 20px;
+  min-height: 410px;
+
+  padding: 25px 22px;
+
   border-radius: 18px;
 
-  background: rgba(30, 41, 59, .55);
+  background: rgba(30, 41, 59, 0.55);
+
   backdrop-filter: blur(12px);
 
-  border: 1px solid rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 
-  transition: .35s ease;
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  transition: 0.35s ease;
 }
 
 .edu-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 18px 30px rgba(56, 189, 248, .18);
+
+  box-shadow:
+    0 18px 30px rgba(56, 189, 248, 0.18);
 }
 
+
+/* HIGHLIGHT */
 .highlight {
-  border: 1px solid rgba(34, 197, 94, .65);
-  box-shadow: 0 0 20px rgba(34, 197, 94, .18);
+  border: 1px solid rgba(34, 197, 94, 0.65);
+
+  box-shadow:
+    0 0 20px rgba(34, 197, 94, 0.18);
 }
+
 
 /* ===========================
-TEXT
+   TITLE
 =========================== */
+
 .edu-card h3 {
-  min-height: 45px;
+  width: 100%;
+
+  min-height: 62px;
+
+  margin: 0 0 10px;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
   color: #22c55e;
-  font-size: 28px;
+
+  font-size: 27px;
   font-weight: 800;
+
+  line-height: 1.25;
+
+  font-family: Georgia, serif;
 }
 
+
+/* ===========================
+   INSTITUTE
+=========================== */
+
 .edu-card p {
-  min-height: 32px;
+  width: 100%;
+
+  min-height: 30px;
+
+  margin: 0 0 8px;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
   color: #cbd5e1;
+
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+
+/* ===========================
+   DATE
+=========================== */
+
+.edu-card small {
+  min-height: 24px;
+
+  margin-bottom: 14px;
+
+  color: #ffffff;
+
   font-size: 14px;
 }
 
-.edu-card span {
-  margin-top: 8px;
-  color: #facc15;
-  font-size: 18px;
-  font-weight: 800;
-}
 
 /* ===========================
-CERTIFICATE / ICON BOX
+   CERTIFICATE BOX
 =========================== */
+
 .cert-box {
-  width: 130px;
-  height: 90px;
+  width: 100%;
+  max-width: 375px;
 
+  height: 180px;
 
-  border-radius: 10px;
-  background: rgba(255, 255, 255, .05);
-  border: 1px solid rgba(255, 255, 255, .08);
+  margin-bottom: 18px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
 }
 
+
+/* PROFESSIONAL CERTIFICATE */
+.professional-cert {
+  max-width: 375px;
+  height: 180px;
+}
+
+
+/* IMAGE */
 .cert-image {
   width: 100%;
   height: 100%;
+
   object-fit: contain;
+
   border-radius: 5px;
+
+  display: block;
 }
 
-/* ICON STYLE */
-.icon {
-  font-size: 42px;
+
+/* ===========================
+   PDF PREVIEW
+=========================== */
+
+.pdf-preview {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  border: none;
+
+  background: #1e293b;
+}
+
+
+/* ===========================
+   ICON BOX
+=========================== */
+
+.cert-box.icon {
+  font-size: 55px;
   font-weight: 800;
 }
 
+
 /* DIFFERENT COLORS */
+
 .graduate-icon {
-  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  background: linear-gradient(
+    135deg,
+    #1e3a8a,
+    #2563eb
+  );
 }
 
 .hsc-icon {
-  background: linear-gradient(135deg, #14532d, #16a34a);
+  background: linear-gradient(
+    135deg,
+    #14532d,
+    #16a34a
+  );
 }
 
 .sslc-icon {
-  background: linear-gradient(135deg, #7c2d12, #f97316);
+  background: linear-gradient(
+    135deg,
+    #7c2d12,
+    #f97316
+  );
 }
 
+
 /* ===========================
-BUTTON
+   PERCENTAGE
 =========================== */
+
+.edu-card span {
+  min-height: 28px;
+
+  margin-bottom: 16px;
+
+  color: #facc15;
+
+  font-size: 21px;
+  font-weight: 800;
+}
+
+
+/* ===========================
+   BUTTON
+=========================== */
+
 .view-btn {
+  width: 230px;
+  height: 48px;
+
   margin-top: auto;
-  width: 185px;
-  height: 46px;
 
   border: none;
   border-radius: 10px;
 
-  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  background: linear-gradient(
+    135deg,
+    #38bdf8,
+    #0ea5e9
+  );
+
   color: #04121d;
 
   font-size: 15px;
   font-weight: 800;
+
   white-space: nowrap;
 
   cursor: pointer;
-  transition: .3s;
+
+  transition: 0.3s;
 }
 
 .view-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 20px rgba(14, 165, 233, .25);
+
+  box-shadow:
+    0 12px 20px rgba(14, 165, 233, 0.25);
 }
 
+
 /* ===========================
-NAV BUTTONS
+   NAV BUTTONS
 =========================== */
+
 .nav-buttons {
-  margin-top: 50px;
+  margin-top: 45px;
+
   display: flex;
   justify-content: center;
+
   gap: 50px;
 }
 
 .btn {
   min-width: 95px;
   height: 44px;
+
   border: none;
   border-radius: 10px;
+
   cursor: pointer;
+
   font-weight: 800;
   font-size: 16px;
 }
@@ -200,38 +390,89 @@ NAV BUTTONS
   color: #000;
 }
 
-/* ===========================
-RESPONSIVE
-=========================== */
-@media(max-width:1100px) {
 
-  .edu-grid {
-    grid-template-columns: repeat(2, 1fr);
+/* ===========================
+   LARGE SCREEN
+=========================== */
+
+@media (max-width: 1100px) {
+
+  .professional-grid {
+    max-width: 900px;
+  }
+
+  .academic-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .edu-card h3 {
+    font-size: 23px;
+  }
+
+  .view-btn {
+    width: 200px;
   }
 
 }
 
-@media(max-width:650px) {
 
-  .edu-grid {
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width: 850px) {
+
+  .professional-grid {
     grid-template-columns: 1fr;
+    max-width: 550px;
   }
 
-  .edu-card {
-    min-height: auto;
+  .academic-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 750px;
+  }
+
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 600px) {
+
+  .education {
+    padding: 25px 15px 35px;
   }
 
   .edu-header h2 {
     font-size: 34px;
   }
 
+  .professional-grid,
+  .academic-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .edu-card {
+    min-height: 390px;
+  }
+
+  .edu-card h3 {
+    font-size: 25px;
+  }
+
   .view-btn {
     width: 100%;
+    max-width: 280px;
   }
 
   .nav-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 15px;
   }
 
   .btn {
