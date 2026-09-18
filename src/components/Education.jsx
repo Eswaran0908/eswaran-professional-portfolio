@@ -1,3 +1,4 @@
+
 import bca from "../assets/Education_Certificates/bca-professional.pdf";
 import hsc from "../assets/Education_Certificates/hsc.pdf";
 import sslc from "../assets/Education_Certificates/sslc.pdf";
@@ -16,10 +17,10 @@ const Education = ({ next, prev }) => {
         <p>Academic Journey & Certifications</p>
       </div>
 
-      {/* FIRST ROW - PROFESSIONAL CERTIFICATIONS */}
+      {/* PROFESSIONAL CERTIFICATIONS */}
       <div className="edu-grid professional-grid">
 
-        {/* NSDC CERTIFICATE */}
+        {/* NSDC */}
         <div className="edu-card highlight">
 
           <h3>NSDC Certification</h3>
@@ -29,13 +30,11 @@ const Education = ({ next, prev }) => {
           <small>📅 Issued: 25 July 2026</small>
 
           <div className="cert-box professional-cert">
-
             <img
               src={nsdc}
               alt="NSDC Certificate"
               className="cert-image"
             />
-
           </div>
 
           <button
@@ -47,8 +46,7 @@ const Education = ({ next, prev }) => {
 
         </div>
 
-
-        {/* MASTER FULL STACK CERTIFICATE */}
+        {/* MASTER */}
         <div className="edu-card highlight">
 
           <h3>
@@ -60,13 +58,11 @@ const Education = ({ next, prev }) => {
           <small>📅 Issued: 14 February 2025</small>
 
           <div className="cert-box professional-cert">
-
             <img
               src={master}
               alt="Master Full Stack Certificate"
               className="cert-image"
             />
-
           </div>
 
           <button
@@ -80,8 +76,7 @@ const Education = ({ next, prev }) => {
 
       </div>
 
-
-      {/* SECOND ROW - ACADEMIC EDUCATION */}
+      {/* ACADEMIC EDUCATION */}
       <div className="edu-grid academic-grid">
 
         {/* BCA */}
@@ -108,7 +103,6 @@ const Education = ({ next, prev }) => {
 
         </div>
 
-
         {/* HSC */}
         <div className="edu-card">
 
@@ -132,7 +126,6 @@ const Education = ({ next, prev }) => {
           </button>
 
         </div>
-
 
         {/* SSLC */}
         <div className="edu-card">
@@ -160,21 +153,14 @@ const Education = ({ next, prev }) => {
 
       </div>
 
-
       {/* NAVIGATION */}
       <div className="nav-buttons">
 
-        <button
-          className="btn prev"
-          onClick={prev}
-        >
+        <button className="btn prev" onClick={prev}>
           ⬅ Prev
         </button>
 
-        <button
-          className="btn next"
-          onClick={next}
-        >
+        <button className="btn next" onClick={next}>
           Next ➡
         </button>
 
@@ -185,3 +171,4 @@ const Education = ({ next, prev }) => {
 };
 
 export default Education;
+
